@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}EtapeCircuit{% endblock %}
+
+{% block body %}
+    <h1>EtapeCircuit</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ etape_circuit.id }}</td>
+            </tr>
+            <tr>
+                <th>Durée_étape</th>
+                <td>{{ etape_circuit.duréeétape }}</td>
+            </tr>
+            <tr>
+                <th>Ordre_étape</th>
+                <td>{{ etape_circuit.ordreétape }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('etape_circuit_index') }}">back to list</a>
+
+    <a href="{{ path('etape_circuit_edit', {'id': etape_circuit.id}) }}">edit</a>
+
+    {{ include('etape_circuit/_delete_form.html.twig') }}
+{% endblock %}
